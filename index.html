@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaheed Zaman | Portfolio</title>
-
     <!-- Arial styling requested -->
     <style>
         :root {
@@ -15,43 +14,36 @@
             --muted: #6b7280;
             --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
         }
-
         header {
             background: linear-gradient(135deg, #2563eb, #1e40af);
             color: white;
             text-align: center;
             padding: 5rem 1rem;
         }
-
         header h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
         }
-
         header p {
             font-size: 1.2rem;
             opacity: 0.95;
         }
-
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 2rem;
         }
-
         section {
             background: var(--card);
             margin-bottom: 2rem;
@@ -59,23 +51,19 @@
             border-radius: 16px;
             box-shadow: var(--shadow);
         }
-
         h2 {
             margin-bottom: 1rem;
             color: var(--primary);
         }
-
         .project-card {
             border: 1px solid #e5e7eb;
             border-radius: 12px;
             padding: 1.5rem;
             transition: transform 0.2s ease;
         }
-
         .project-card:hover {
             transform: translateY(-4px);
         }
-
         .btn {
             display: inline-block;
             margin-top: 1rem;
@@ -86,9 +74,98 @@
             border-radius: 8px;
             font-weight: bold;
         }
-
         .btn:hover {
             background: #1d4ed8;
+        }
+
+        /* ── Pickcode embed card ── */
+        .pickcode-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+        .pickcode-card:hover {
+            transform: translateY(-4px);
+        }
+        .pickcode-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .chrome-dots {
+            display: flex;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot-red   { background: #ff5f57; }
+        .dot-amber { background: #febc2e; }
+        .dot-green { background: #28c840; }
+        .pickcode-url {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 5px;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.72rem;
+            color: var(--muted);
+            font-family: monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .pickcode-open-btn {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: var(--primary);
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.78rem;
+            font-weight: bold;
+            padding: 0.32rem 0.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+        .pickcode-open-btn:hover {
+            background: #1d4ed8;
+        }
+        .pickcode-open-btn svg {
+            width: 12px;
+            height: 12px;
+        }
+        .pickcode-iframe-wrap {
+            width: 100%;
+            height: 520px;
+            background: #f3f4f6;
+        }
+        .pickcode-iframe-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        .pickcode-footer {
+            padding: 0.65rem 1rem;
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 600px) {
+            .pickcode-iframe-wrap { height: 360px; }
+            .pickcode-url { display: none; }
         }
 
         footer {
@@ -99,14 +176,11 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>Shaheed Zaman</h1>
         <p>AP Computer Science Student | Aspiring Software Developer</p>
     </header>
-
     <main class="container">
-
         <section id="about">
             <h2>About Me</h2>
             <p>
@@ -117,10 +191,8 @@
                 real-world problem solving.
             </p>
         </section>
-
         <section id="projects">
             <h2>Projects</h2>
-
             <div class="project-card">
                 <h3>GitHub Portfolio Repository</h3>
                 <p>
@@ -128,21 +200,52 @@
                     GitHub. I regularly update my repositories as I learn new
                     technologies and build new applications.
                 </p>
-
                 <a class="btn"
-                   href="https://github.com/Shaheedz190?tab=repositories"
+                   href="https://github.com/Shaheedez190?tab=repositories"
                    target="_blank"
                    rel="noopener noreferrer">
                     Visit My GitHub Site
                 </a>
             </div>
+
+            <!-- Pickcode project embed -->
+            <div class="pickcode-card">
+                <div class="pickcode-header">
+                    <div class="chrome-dots" aria-hidden="true">
+                        <div class="dot dot-red"></div>
+                        <div class="dot dot-amber"></div>
+                        <div class="dot dot-green"></div>
+                    </div>
+                    <div class="pickcode-url">app.pickcode.io/share/cml6tbkee01row3zb7kek3fs8</div>
+                    <a class="pickcode-open-btn"
+                       href="https://app.pickcode.io/share/cml6tbkee01row3zb7kek3fs8"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Open Pickcode project in new tab">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M6 3H3a1 1 0 00-1 1v9a1 1 0 001 1h9a1 1 0 001-1v-3M9 2h5m0 0v5m0-5L7 10"/>
+                        </svg>
+                        Open
+                    </a>
+                </div>
+                <div class="pickcode-iframe-wrap">
+                    <iframe
+                        src="https://app.pickcode.io/share/cml6tbkee01row3zb7kek3fs8"
+                        title="Pickcode project by Shaheed Zaman"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+                    </iframe>
+                </div>
+                <div class="pickcode-footer">
+                    Built &amp; shared on Pickcode
+                </div>
+            </div>
+
         </section>
-
     </main>
-
     <footer>
         <p>&copy; 2026 Shaheed Zaman. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
